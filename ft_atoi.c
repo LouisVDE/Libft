@@ -6,13 +6,11 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:40:41 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/10 15:44:50 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/10/10 15:09:39 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
-static int ft_verifification(char c)
 
 static int	ft_verif(char c)
 {
@@ -29,26 +27,6 @@ int	ft_atoi(const char *str)
 	int				sign;
 	int				i;
 
-    i = 0;
-    while(ft_verifification(str[i]) == 1)
-        i++;
-    if (str[i] == '-' || str[i] == '+')
-    {
-        if (str[i++] == '-')
-            sign = -1;
-    }
-    while (str[i] && str[i] >= '0' && str[i] <= '9')
-    {
-        result *= 10;
-        result += str[i++] - '0';
-        if (result > LONG_MAX && sign == 1)
-            return (-1);
-        if (result > LONG_MAX && sign == -1)
-        return (0);
-    }
-    result *= sign;
-    return ((int)(result));
-}
 	i = 0;
 	while (ft_verif(str[i]) == 1)
 		i++;
