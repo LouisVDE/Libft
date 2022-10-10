@@ -6,21 +6,15 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:40:41 by lovanden          #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2022/10/10 13:30:21 by lovanden         ###   ########.fr       */
-=======
-/*   Updated: 2022/10/10 15:09:39 by lovanden         ###   ########.fr       */
->>>>>>> 196390665d2bd18ba471483bc944ba2f07743309
+/*   Updated: 2022/10/10 15:44:50 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-<<<<<<< HEAD
 static int ft_verifification(char c)
-=======
+
 static int	ft_verif(char c)
->>>>>>> 196390665d2bd18ba471483bc944ba2f07743309
 {
 	if (c && (c == '\f' || c == '\t' || c == ' ')
 		|| (c == '\n' || c == '\r' || c == '\v'))
@@ -35,7 +29,6 @@ int	ft_atoi(const char *str)
 	int				sign;
 	int				i;
 
-<<<<<<< HEAD
     i = 0;
     while(ft_verifification(str[i]) == 1)
         i++;
@@ -56,7 +49,6 @@ int	ft_atoi(const char *str)
     result *= sign;
     return ((int)(result));
 }
-=======
 	i = 0;
 	while (ft_verif(str[i]) == 1)
 		i++;
@@ -77,4 +69,3 @@ int	ft_atoi(const char *str)
 	result *= sign;
 	return ((int)(result));
 }
->>>>>>> 196390665d2bd18ba471483bc944ba2f07743309
