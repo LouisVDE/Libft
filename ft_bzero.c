@@ -6,7 +6,11 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:39:27 by lovanden          #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2022/10/10 13:39:36 by lovanden         ###   ########.fr       */
+=======
+/*   Updated: 2022/10/10 15:09:45 by lovanden         ###   ########.fr       */
+>>>>>>> 196390665d2bd18ba471483bc944ba2f07743309
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +18,7 @@
 
 void	ft_bzero(void *s, size_t n)
 {
-	char	i;
+	char	*i;
 
 	i = s;
 	while (n)
