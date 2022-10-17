@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_memcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 15:40:35 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/17 10:07:28 by lovanden         ###   ########.fr       */
+/*   Created: 2022/10/17 11:06:21 by lovanden          #+#    #+#             */
+/*   Updated: 2022/10/17 11:23:04 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+int	ft_memcpm(const void *s1, const void *s2, size_t n)
 {
-	char	*ret;
-	int		i;
+	size_t			i;
+	unsigned char	*str1_temp;
+	unsigned char	*str2_temp;
 
-	ret = NULL;
 	i = 0;
-	while (s[i])
+	str1_temp = (unsigned char *)s1;
+	str2_temp = (unsigned char *)s2;
+	while (i < n)
 	{
-		if (s[i] == (char)c)
-			ret = &((char *)s)[i];
+		if (str1_temp[i] != str2_temp[i])
+			return (str1_temp[i] - str2_temp[i]);
 		i++;
 	}
-	if (c == '\0')
-		ret = &((char *)s)[i];
-	return (ret);
+	return (0);
 }

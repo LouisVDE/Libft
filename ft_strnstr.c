@@ -1,31 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/15 15:40:35 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/17 10:07:28 by lovanden         ###   ########.fr       */
+/*   Created: 2022/10/17 11:30:14 by lovanden          #+#    #+#             */
+/*   Updated: 2022/10/17 11:43:47 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	*ft_strrchr(const char *s, int c)
+char	*ft_strnstr(const char *s1, const char *s2, size_t len)
 {
-	char	*ret;
-	int		i;
+	size_t	i;
+	size_t	j;
+	char	*s1_less;
 
-	ret = NULL;
+	s1_less = (char *)s1;
 	i = 0;
-	while (s[i])
+	if (!*s2)
+		return (s1_less);
+	while (s1_less[i] && i < len)
 	{
-		if (s[i] == (char)c)
-			ret = &((char *)s)[i];
+		j = 0;
+		while (s1_less[i + j] == s2[j] && i + j < len)
+		{
+			if (!s2[j])
+				return (s1_less + i);
+			j++;
+		}
+		if (!s2[j])
+			return (s1_less + i);
 		i++;
 	}
-	if (c == '\0')
-		ret = &((char *)s)[i];
-	return (ret);
+	return (NULL);
 }
