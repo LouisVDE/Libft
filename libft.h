@@ -6,7 +6,7 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:38:45 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/15 15:36:30 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/10/17 12:02:44 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,4 +19,5 @@
 # include <limits.h>
 
 size_t	ft_strlen(const char *str);
+void	ft_bzero(void *s, size_t n);
 #endif
