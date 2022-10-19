@@ -6,7 +6,7 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 23:27:08 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/17 23:34:19 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:10:18 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		i = -1;
 		while (s2[++i])
 		{
-			str[len] = s2[i];
+			str[len1] = s2[i];
 			len1++;
 		}
 		str[len1] = '\0';

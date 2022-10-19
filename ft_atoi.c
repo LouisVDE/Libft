@@ -6,16 +6,16 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:40:41 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/10 15:09:39 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/10/19 19:15:26 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	ft_verif(char c)
+static	int	ft_verif(char c)
 {
-	if (c && (c == '\f' || c == '\t' || c == ' ')
-		|| (c == '\n' || c == '\r' || c == '\v'))
+	if (c && (c == '\f' || c == '\t' || c == ' '
+			|| c == '\n' || c == '\r' || c == '\v'))
 		return (1);
 	else
 		return (0);
@@ -23,10 +23,12 @@ static int	ft_verif(char c)
 
 int	ft_atoi(const char *str)
 {
-	unsigned long	result;
-	int				sign;
-	int				i;
+	int						sign;
+	unsigned long long		result;
+	int						i;
 
+	result = 0;
+	sign = 1;
 	i = 0;
 	while (ft_verif(str[i]) == 1)
 		i++;
