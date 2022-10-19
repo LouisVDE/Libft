@@ -6,13 +6,13 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 11:06:21 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/17 11:52:03 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:59:27 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_memcpm(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
 	size_t			i;
 	unsigned char	*str1_temp;

@@ -6,13 +6,13 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 09:04:50 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/19 10:14:40 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/10/19 21:05:06 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static int	sublen(int k, int start, int len, const char *s)
+static	int	getsublen(int k, int start, int len, const char *s)
 {
 	while (s[k + start])
 		k++;
@@ -21,7 +21,7 @@ static int	sublen(int k, int start, int len, const char *s)
 	return (len);
 }
 
-static int	casestart(char **substr)
+static	int	casestartfar(char **substr)
 {
 	*substr = (char *)malloc(sizeof(char) * 1);
 	if (!*substr)
@@ -43,11 +43,11 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	s_len = ft_strlen((char *)s);
 	if (s_len < start)
 	{
-		if (!casestart(&substr))
+		if (!casestartfar(&substr))
 			return (NULL);
 		return (substr);
 	}
-	len = sublen(k, start, len, s);
+	len = getsublen(k, start, len, s);
 	substr = (char *)malloc(sizeof(char) * (len + 1));
 	if (!substr)
 		return (NULL);
@@ -57,13 +57,3 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	substr[i] = '\0';
 	return (substr);
 }
-
-/*#include <stdio.h>
-
-int main(void)
-{
-	char *s;
-
-	s = "0123456789";
-	printf("%s", ft_substr(s, 2, 5));
-}*/

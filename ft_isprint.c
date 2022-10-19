@@ -6,13 +6,13 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 14:27:56 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/08 15:04:30 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/10/19 20:50:19 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(char c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);
