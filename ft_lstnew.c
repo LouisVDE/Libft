@@ -6,7 +6,7 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 20:27:51 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/19 20:27:55 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:59:46 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,12 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*cell;
+	t_list	*list;
 
-	cell = malloc(sizeof(t_list));
-	if (content == NULL)
-		cell->next = NULL;
-	if (!cell)
+	list = malloc(sizeof(t_list));
+	if (!list)
 		return (NULL);
-	cell->content = content;
-	cell->next = NULL;
-	return (cell);
+	list->content = content;
+	list->next = NULL;
+	return (list);
 }
