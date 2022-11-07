@@ -80,7 +80,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-
 re: clean all
 
 .PHONY: bonus all clean fclean re

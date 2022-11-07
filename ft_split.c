@@ -6,85 +6,78 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 10:05:29 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/19 15:36:18 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/11/07 11:18:39 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	count_word(char const *s, char c)
+static size_t	ft_count_word(char const *s, char c)
 {
-	size_t	word_count;
-	int		skip;
+	size_t	count;
 
-	word_count = 0;
-	skip = 1;
+	count = 0;
 	while (*s)
 	{
-		if (*s != c && skip)
-		{
-			skip = 0;
-			word_count++;
-		}
-		else if (*s == c)
-			skip = 1;
-		s++;
+		while (*s && *s == c)
+			s++;
+		if (*s)
+			count++;
+		while (*s && *s != c)
+			s++;
 	}
-	return (word_count);
+	return (count);
 }
 
-static void	err_freemall(char **tab)
+static void	*ft_free_all_tab(char **strs, int i)
 {
-	int	i;
+	while (--i >= 0)
+		free(strs[i]);
+	free(strs);
+	return (NULL);
+}
 
+static char	*ft_extract_word(const char *s, char c)
+{
+	char		*word;
+	const char	*save;
+	size_t		i;
+
+	save = s;
 	i = 0;
-	while (tab[i])
+	while (*s && *s != c)
 	{
-		free(tab[i]);
 		i++;
-	}
-	free(tab);
-}
-
-static void	make_words(char **words, char const *s, char c, size_t n_words)
-{
-	char	*ptr_c;
-
-	while (*s && *s == c)
 		s++;
-	while (n_words--)
-	{
-		ptr_c = ft_strchr(s, c);
-		if (ptr_c != NULL)
-		{
-			*words = ft_substr(s, 0, ptr_c - s);
-			if (!(*words))
-			{
-				err_freemall(words);
-				return ;
-			}
-			while (*ptr_c && *ptr_c == c)
-				ptr_c++;
-			s = ptr_c;
-		}
-		else
-			*words = ft_substr(s, 0, ft_strlen((char *)s) + 1);
-		words++;
 	}
-	*words = NULL;
+	word = ft_substr(save, 0, i);
+	return (word);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	num_words;
-	char	**words;
+	char	**strs;
+	char	**save;
 
-	if (s == NULL)
+	if (!s)
 		return (NULL);
-	num_words = count_word(s, c);
-	words = malloc(sizeof(char **) * (num_words +1));
-	if (words == NULL)
+	strs = malloc(sizeof(char const *) * (ft_count_word(s, c) + 1));
+	if (!strs)
 		return (NULL);
-	make_words(words, s, c, num_words);
-	return (words);
+	save = strs;
+	while (*s)
+	{
+		while (*s && (*s == c))
+			s++;
+		if (!*s)
+			break ;
+		*strs = ft_extract_word(s, c);
+		if (!*strs)
+			return (ft_free_all_tab(save, (strs - save) + 1));
+		strs++;
+		while (*s && (*s != c))
+			s++;
+	}
+	*strs = NULL;
+	return (save);
 }
