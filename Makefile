@@ -1,85 +1,79 @@
 NAME = libft.a
-NAMEPROG = a.out
+ 
+SRCS = ft_strlen.c		\
+	   ft_isalpha.c		\
+	   ft_isdigit.c		\
+	   ft_isalnum.c		\
+	   ft_isascii.c		\
+	   ft_isprint.c		\
+	   ft_strncmp.c		\
+	   ft_strlcat.c		\
+	   ft_strlcpy.c		\
+	   ft_strnstr.c		\
+	   ft_atoi.c		\
+	   ft_strdup.c		\
+	   ft_strchr.c		\
+	   ft_strrchr.c		\
+	   ft_memset.c		\
+	   ft_bzero.c		\
+	   ft_memcpy.c		\
+	   ft_memmove.c		\
+	   ft_toupper.c		\
+	   ft_tolower.c		\
+	   ft_memchr.c		\
+	   ft_memcmp.c		\
+	   ft_calloc.c		\
+	   ft_putchar_fd.c	\
+	   ft_putstr_fd.c	\
+	   ft_putendl_fd.c	\
+	   ft_putnbr_fd.c	\
+	   ft_substr.c		\
+	   ft_strmapi.c		\
+	   ft_strjoin.c		\
+	   ft_strtrim.c		\
+	   ft_striteri.c	\
+	   ft_split.c		\
+	   ft_itoa.c
 
-CC = gcc
+SRCS_BONUS = ft_lstnew_bonus.c	\
+	   ft_lstadd_front_bonus.c	\
+	   ft_lstsize_bonus.c		\
+	   ft_lstlast_bonus.c		\
+	   ft_lstadd_back_bonus.c	\
+	   ft_lstdelone_bonus.c		\
+	   ft_lstclear_bonus.c		\
+	   ft_lstiter_bonus.c		\
+	   ft_lstmap_bonus.c		\
+
+OBJ = $(SRCS:.c=.o)
+
+OBJ_BONUS = $(SRCS_BONUS:.c=.o)
+
+AR = ar -rc
+
 CFLAGS = -Wall -Wextra -Werror
-AR = ar rcs
+
+CC = cc
+
 RM = rm -f
 
+$(NAME): $(OBJ)
+	$(AR) $(NAME) $(OBJ)
 
-
-FILES = ft_strrchr \
-			ft_atoi \
-			ft_bzero \
-			ft_isalnum \
-			ft_isalpha \
-			ft_isdigit \
-			ft_isascii \
-			ft_isprint \
-			ft_memchr \
-			ft_memcmp \
-			ft_memcpy \
-			ft_memmove \
-			ft_memset \
-			ft_strlen \
-			ft_strlcpy \
-			ft_strlcat \
-			ft_strncmp \
-			ft_strrchr \
-			ft_tolower \
-			ft_toupper \
-			ft_strnstr \
-			ft_calloc \
-			ft_strdup \
-			ft_strjoin \
-			ft_putnbr_fd \
-			ft_putchar_fd \
-			ft_putstr_fd \
-			ft_putendl_fd \
-			ft_strtrim \
-			ft_strmapi \
-			ft_substr \
-			ft_strchr \
-			ft_itoa \
-			ft_split \
-			ft_striteri \
-
-FILES_B = ft_lstsize \
-			ft_lstnew \
-			ft_lstadd_front \
-			ft_lstlast \
-			ft_lstadd_back \
-			ft_lstiter \
-			ft_lstclear \
-			ft_lstdelone \
-			ft_lstmap \
-
-SRCS_DIR = ./
-SRCS = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES)))
-SRCS_B = $(addprefix $(SRCS_DIR), $(addsuffix .c, $(FILES_B)))
-
-OBJS_DIR = ./
-OBJS = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES)))
-OBJS_B = $(addprefix $(OBJS_DIR), $(addsuffix .o, $(FILES_B)))
-
-
-.c.o: $(SRCS)
-	$(CC) $(CFLAGS) -c -I./ -o $@ $<
-
-$(NAME): $(OBJS)
-	$(AR) $@ $^
-
-bonus: $(OBJS_B)
-	$(AR) $(NAME) $^
+.c.o:
+	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
 all: $(NAME)
 
-clean:
-	$(RM) $(OBJS) $(OBJS_B)
+bonus: $(OBJ) $(OBJ_BONUS)
+	$(AR) $(NAME) $(OBJ) $(OBJ_BONUS)
 
-fclean: clean
+clean:
+	$(RM) $(OBJ) $(OBJ_BONUS)
+
+fclean: clean 
 	$(RM) $(NAME)
 
-re: clean all
+re :    fclean $(NAME) 
 
-.PHONY: bonus all clean fclean re
+.PHONY: all clean fclean re bonus
