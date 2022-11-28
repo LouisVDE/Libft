@@ -6,11 +6,11 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/09 21:18:44 by lovanden          #+#    #+#             */
-/*   Updated: 2022/11/09 21:18:46 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/11/28 09:09:09 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-include "libft.h"
+#include "libft.h"
 
 t_list	*ft_lstnew(void *content)
 {
