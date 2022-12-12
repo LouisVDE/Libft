@@ -6,7 +6,7 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 13:38:45 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/19 20:59:38 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/12/12 14:20:15 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 
 # include <unistd.h>
 # include <stdlib.h>
-# include <string.h>
 # include <limits.h>
 
 typedef struct s_list
