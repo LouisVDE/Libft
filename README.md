@@ -6,6 +6,6 @@ How to use ?
 
 ``make bonus`` to compile with bonuses.
 
-``make fclean`` to delete .o compiled functions.
+``make fclean`` to delete .o compiled files.
 
 ![note](https://i.imgur.com/GJG7F5h.png)
