@@ -6,9 +6,11 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 10:24:59 by lovanden          #+#    #+#             */
-/*   Updated: 2022/12/13 14:32:27 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/12/14 19:21:33 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "libft.h"
 
 char	*ft_strchr(const char *s, int c)
 {
