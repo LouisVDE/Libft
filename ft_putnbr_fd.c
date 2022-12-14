@@ -6,7 +6,7 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/17 13:17:30 by lovanden          #+#    #+#             */
-/*   Updated: 2022/10/17 13:33:31 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/12/13 15:22:10 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
+	if (fd < 0)
+		return ;
 	if (n == INT_MIN)
 		ft_putstr_fd("-2147483648", fd);
 	else

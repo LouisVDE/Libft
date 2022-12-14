@@ -6,7 +6,7 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/08 19:40:41 by lovanden          #+#    #+#             */
-/*   Updated: 2022/11/07 11:53:59 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/12/13 14:32:00 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,3 @@ int	ft_atoi(const char *str)
 	result *= sign;
 	return ((int)(result));
 }
-
-/*#include <stdio.h>
-int main()
-{
-	printf("[atoi custom] 	>> %d\n", ft_atoi(""));
-	printf("[atoi original] >> %d\n", atoi(""));
-}
-*/

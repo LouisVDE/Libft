@@ -6,7 +6,7 @@
 /*   By: lovanden <lovanden@student.s19.be>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/10 11:33:26 by lovanden          #+#    #+#             */
-/*   Updated: 2022/12/12 13:02:05 by lovanden         ###   ########.fr       */
+/*   Updated: 2022/12/12 15:14:13 by lovanden         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,14 +40,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 		dst[len_dst] = '\0';
 	return (res);
 }
-
-/*int	main(void)
-{
-	char	*dst;
-	char	*src;
-
-	dst = "a";
-	src = "b";
-	printf("%zu\n", ft_strlcat(dst, src, 1));
-	printf("%zu", strlcat(dst, src, 1));
-}*/
